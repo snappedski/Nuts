@@ -1,0 +1,9 @@
+X:\Documents\Visual Studio 2015\Projects\Nuts\Nuts\bin\Debug\Nuts.exe.config
+X:\Documents\Visual Studio 2015\Projects\Nuts\Nuts\obj\Debug\Nuts.csprojResolveAssemblyReference.cache
+X:\Documents\Visual Studio 2015\Projects\Nuts\Nuts\obj\Debug\Nuts.frm_dbSetup.resources
+X:\Documents\Visual Studio 2015\Projects\Nuts\Nuts\obj\Debug\Nuts.Properties.Resources.resources
+X:\Documents\Visual Studio 2015\Projects\Nuts\Nuts\obj\Debug\Nuts.csproj.GenerateResource.Cache
+X:\Documents\Visual Studio 2015\Projects\Nuts\Nuts\bin\Debug\Nuts.exe
+X:\Documents\Visual Studio 2015\Projects\Nuts\Nuts\bin\Debug\Nuts.pdb
+X:\Documents\Visual Studio 2015\Projects\Nuts\Nuts\obj\Debug\Nuts.exe
+X:\Documents\Visual Studio 2015\Projects\Nuts\Nuts\obj\Debug\Nuts.pdb
