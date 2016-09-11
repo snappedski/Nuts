@@ -47,9 +47,9 @@ namespace Nuts
 
             if (v == true)
             { // Continue below if all valid //////////////
-                string hash = hj_tools.ext_hash_sha1(user,pass);
-                string[] conditions = {"username", "password"};
-                string[] values = { user,hash};
+                string hash = hj_tools.ext_hash_sha1(user,pass); //Hashes password
+                string[] conditions = {"username", "password"}; //where column contains..
+                string[] values = { user,hash}; //..these
                 string[] r = db.db_select("hj_users", db_setup.columns_hj_users, conditions, values);
                 if (r.Length > 0){
                     //LOAD MAIN APPLICATION WINDOW

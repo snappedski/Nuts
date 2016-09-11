@@ -13,11 +13,17 @@ namespace Nuts
         //Testing purposes, will move to flat file
         ////////////////////////////////////////////////////////////////////
 
-        public static string c_host = "localhost";
+        public static string c_host = hj_tools.fileGetLine(nuts_session.config_path, "hostname");
+        public static string c_db = hj_tools.fileGetLine(nuts_session.config_path, "database");
+        public static string c_user = hj_tools.fileGetLine(nuts_session.config_path, "username");
+        public static string c_pass = hj_tools.fileGetLine(nuts_session.config_path, "password");
+        //public static int c_timeout = hj_tools.fileGetLine(nuts_session.config_path, "timeout");
+
+        //public static string c_host = "localhost";
         //public static string c_host = "192.168.1.19";
-        public static string c_db = "handyjobs";
-        public static string c_user = "hj_root";
-        public static string c_pass = "4Xjf3SvVtrcR4hLW"; //AD.Tr]gi]5,K
+        //public static string c_db = "handyjobs";
+        //public static string c_user = "hj_root";
+        //public static string c_pass = "4Xjf3SvVtrcR4hLW"; //AD.Tr]gi]5,K
         //public static int c_timeout = 10;
 
         //public static string c_host = "149.56.142.21";

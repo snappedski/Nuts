@@ -17,9 +17,9 @@ namespace Nuts
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            if (!File.Exists(@"C:\Program Files\HandyJobs\Nuts\nuts.config")){
-                Application.Run(new frm_dbSetup());
-            } else { Application.Run(new frm_login()); }
+            if (!File.Exists(nuts_session.config_path)){ //If config file does not exists
+                Application.Run(new frm_dbSetup()); //Load Database Setup
+            } else { Application.Run(new frm_login()); } //Else Load Login
         }
     }
 }

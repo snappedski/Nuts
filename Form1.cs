@@ -48,14 +48,16 @@ namespace Nuts
             if (db_pass == "") { v = inputCheck.noInfo(v, "Password"); }
 
             if (v == true) { // Continue below if all valid //////////////
-                hj_tools.fileCreate(@"C:\Program Files\HandyJobs\Nuts\", "Nuts", ".config", "Nuts main configuration file.");
-                //read HERE
                 string r = db_setup.db_initialize();
                 if (r != null) { hj_tools.msgBox(r, "Cannot Initialize", "ERROR", true);
                 } else { //db setup successful
+                    hj_tools.fileCreate(nuts_session.config_dir, nuts_session.config_name, nuts_session.config_ext, nuts_session.config_description); //Create config file
+                    string[] strSettings = { "hostname", "database", "username", "password", "timeout" }; //Settings
+                    string[] strValues = { db_host, db_db, db_user, db_pass, "10"}; //Values
+                    hj_tools.fileAppend(nuts_session.config_path, hj_tools.writeConfig(strSettings,strValues)); //Add database info to config
                     string hash = hj_tools.ext_hash_sha1("admin", "password");
-                    string[] values = {"admin", "@", hash, "1", "0"}; //Column Values
-                    db.db_insert("hj_users", db_setup.columns_hj_users, values);
+                    string[] strIn = {"admin", "@", hash, "1", "0"}; //Column Values
+                    db.db_insert("hj_users", db_setup.columns_hj_users, strIn); //Create admin account
                     frm_login form = new frm_login();
                     //form.Text = "test";
                     form.Show();

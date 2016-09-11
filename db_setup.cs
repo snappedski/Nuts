@@ -21,7 +21,7 @@ namespace Nuts
         //public static string[] dt_nuts_inventory = { "int", "str", "int", "int", "dec", "str" };
 
 
-        public static string db_initialize(){
+        public static string db_initialize(){ //Creates all tables
             string r = null;
             if (db.connect() == true){
                 try { string coll = "'utf8_unicode_ci'";
@@ -69,7 +69,6 @@ namespace Nuts
         //"`uuid` varchar(40) collate " + coll + " NOT NULL,"+
         //"`time` timestamp collate " + coll + " NOT NULL,"+
         //"`default_balance` decimal(65,2) collate " + coll + " NOT NULL,"+
-        //"PRIMARY KEY  (`loc`)) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE="+coll+";";
         //"`sku` int(11) NOT NULL AUTO_INCREMENT," +
 
     }
