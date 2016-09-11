@@ -47,10 +47,12 @@ namespace Nuts
 
             if (v == true) { // Continue below if all valid //////////////
                 string r = db_setup.db_initialize();
-                if (r == null){ inputCheck.msgBox(r, "Cannot Initialize");
+                if (r == null) { inputCheck.msgBox(r, "Cannot Initialize");
                 } else { //db setup successful
-                    
-
+                    frm_login form = new frm_login();
+                    //form.Text = "test";
+                    form.Show();
+                    Application.Run();
                 }
             }
 
@@ -62,6 +64,11 @@ namespace Nuts
         }
 
         private void label1_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pic_dbSetup_Click(object sender, EventArgs e)
         {
 
         }

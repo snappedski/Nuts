@@ -10,14 +10,21 @@ namespace Nuts
 {
     class db
     {
-        //public static string c_host = "localhost";
-        public static string c_host = "192.168.1.19";
+        public static string c_host = "localhost";
+        //public static string c_host = "192.168.1.19";
         public static string c_db = "handyjobs";
         public static string c_user = "hj_root";
-        public static string c_pass = "4Xjf3SvVtrcR4hLW";
-        public static int c_timeout = 10;
+        public static string c_pass = "4Xjf3SvVtrcR4hLW"; //AD.Tr]gi]5,K
+        //public static int c_timeout = 10;
 
-        public static SqlConnection con = new SqlConnection("user id=" + c_user + ";" + "password=" + c_pass + ";server=" + c_host + ";" + "Trusted_Connection=yes;" + "database=" + c_db + "; " + "connection timeout=" + c_timeout);
+        //public static string c_host = "149.56.142.21";
+        //public static string c_db = "ski_nuts";
+        //public static string c_user = "ski_root";
+        //public static string c_pass = "AD.Tr]gi]5,K";
+        //public static int c_timeout = 10;
+
+        public static SqlConnection con = new SqlConnection("Server=" + c_host + ";Database=" + c_db + ";Uid=" + c_user + ";Pwd=" + c_pass + ";");
+        //public static SqlConnection con = new SqlConnection("user id=" + c_user + ";" + "password=" + c_pass + ";server=" + c_host + ";" + "Trusted_Connection=yes;" + "database=" + c_db + "; " + "connection timeout=" + c_timeout);
 
         public static Boolean connect(){
             Boolean r = true;
