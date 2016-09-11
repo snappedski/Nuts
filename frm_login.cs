@@ -41,13 +41,21 @@ namespace Nuts
         {
             /////////////////// Validation ///////////////////////////////
             Boolean v = true;
-            if (in_user.Text == "") { v = inputCheck.noInfo(v, "Username"); }
-            if (in_pass.Text == "") { v = inputCheck.noInfo(v, "Password"); }
+            string user = in_user.Text; string pass = in_pass.Text;
+            if (user == "") { v = inputCheck.noInfo(v, "Username"); }
+            if (pass == "") { v = inputCheck.noInfo(v, "Password"); }
 
             if (v == true)
             { // Continue below if all valid //////////////
-                //CONNECT WITH ACCOUNT
-                //LOAD APPLICATION MAIN WINDOW
+                string hash = hj_tools.ext_hash_sha1(user,pass);
+                string[] conditions = {"username", "password"};
+                string[] values = { user,hash};
+                string[] r = db.db_select("hj_users", db_setup.columns_hj_users, conditions, values);
+                if (r.Length > 0){
+                    //LOAD MAIN APPLICATION WINDOW
+                } else {
+                    hj_tools.msgBox("Failed Login. Please check your credentials and try again.", "Failed Login!", "EXCLAMATION", true);
+                }
             }
         }
 

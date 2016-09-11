@@ -40,20 +40,22 @@ namespace Nuts
         private void button1_Click(object sender, EventArgs e){
             /////////////////// Validation ///////////////////////////////
             Boolean v = true;
-            if (in_host.Text == "") { v = inputCheck.noInfo(v, "Hostname"); }
-            if (in_db.Text == "") { v = inputCheck.noInfo(v, "Database"); }
-            if (in_user.Text == "") { v = inputCheck.noInfo(v, "Username"); }
-            if (in_pass.Text == "") { v = inputCheck.noInfo(v, "Password"); }
+            string db_host = in_host.Text; string db_db = in_db.Text;
+            string db_user = in_user.Text; string db_pass = in_pass.Text;
+            if (db_host == "") { v = inputCheck.noInfo(v, "Hostname"); }
+            if (db_db == "") { v = inputCheck.noInfo(v, "Database"); }
+            if (db_user == "") { v = inputCheck.noInfo(v, "Username"); }
+            if (db_pass == "") { v = inputCheck.noInfo(v, "Password"); }
 
             if (v == true) { // Continue below if all valid //////////////
+                hj_tools.fileCreate(@"C:\Program Files\HandyJobs\Nuts\", "Nuts", ".config", "Nuts main configuration file.");
+                //read HERE
                 string r = db_setup.db_initialize();
-                if (r == null) { inputCheck.msgBox(r, "Cannot Initialize");
+                if (r != null) { hj_tools.msgBox(r, "Cannot Initialize", "ERROR", true);
                 } else { //db setup successful
-                    /////////////////////////////
-                    string[] columns = { }; //create column list in db class
-                    string[] values = { }; //create values list in db class
-                    /////////////////////////////
-                    db.db_insert("hj_users", columns, values);
+                    string hash = hj_tools.ext_hash_sha1("admin", "password");
+                    string[] values = {"admin", "@", hash, "1", "0"}; //Column Values
+                    db.db_insert("hj_users", db_setup.columns_hj_users, values);
                     frm_login form = new frm_login();
                     //form.Text = "test";
                     form.Show();

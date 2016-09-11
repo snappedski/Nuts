@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,7 +17,9 @@ namespace Nuts
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_dbSetup());
+            if (!File.Exists(@"C:\Program Files\HandyJobs\Nuts\nuts.config")){
+                Application.Run(new frm_dbSetup());
+            } else { Application.Run(new frm_login()); }
         }
     }
 }

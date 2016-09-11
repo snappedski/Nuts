@@ -8,15 +8,9 @@ using System.Windows.Forms;
 namespace Nuts
 {
     class inputCheck{
-        public static void msgBox(string msg, string title){
-            if (msg != null){
-                Console.WriteLine("- ERROR: " + msg.ToString());
-                MessageBox.Show(msg, title, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
 
         public static Boolean noInfo(Boolean v, string fieldName){ //If no information is provided
-            if (v == true) { msgBox("The " + fieldName + " field does not contain any information.", "Invalid Information");
+            if (v == true) { hj_tools.msgBox("The " + fieldName + " field does not contain any information.", "Invalid Information", "ERROR", true);
                 v = false;
             }
             return v;

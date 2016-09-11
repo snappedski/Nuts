@@ -26,7 +26,6 @@ namespace Nuts
         //public static string c_pass = "AD.Tr]gi]5,K";
         //public static int c_timeout = 10;
 
-        
         ////////////////////////////////////////////////////////////////////
         //Connection string
         public static SqlConnection con = new SqlConnection("Server=" + c_host + ";Database=" + c_db + ";Uid=" + c_user + ";Pwd=" + c_pass + ";");
@@ -35,14 +34,14 @@ namespace Nuts
         public static Boolean connect(){ //Connect
             Boolean r = true;
             try { con.Open(); } catch (Exception e) { r = false;
-                inputCheck.msgBox(e.ToString(),"Cannot Connect!");
+                hj_tools.msgBox(e.ToString(),"Cannot Connect!", "ERROR", true);
             }
             return r;
         }
 
         public static void disconnect(){ //Disconnect
             try{ con.Close();}
-            catch (Exception e){ inputCheck.msgBox(e.ToString(), "Database Error"); }
+            catch (Exception e){ hj_tools.msgBox(e.ToString(), "Database Error", "ERROR", true); }
         }
 
         public static String dbStrAtoStr(String[] A){ //asterisk exception / Array to string separated by comma
@@ -74,14 +73,11 @@ namespace Nuts
                     SqlDataReader read = null;
                     SqlCommand cmd = new SqlCommand("select " + dbStrAtoStr(columns) + " from " + table + dbWhere(conditions, values) + ";", con);
 
-
                     read = cmd.ExecuteReader();
                     // rows = (Int32)cmd.ExecuteScalar();
-                    if (read.HasRows)
-                    {
+                    if (read.HasRows){
                         int i = 0;
-                        while (read.Read())
-                        {
+                        while (read.Read()){
                             string[] rows = null;
                             for (int j = 0; j < read.FieldCount; j++)
                             {
@@ -95,7 +91,7 @@ namespace Nuts
                     disconnect();
                 }
             }
-            catch (Exception e){ inputCheck.msgBox(e.ToString(), "Database Error"); }
+            catch (Exception e){ hj_tools.msgBox(e.ToString(), "Database Error", "ERROR", true); }
             return r;
         }
 
@@ -106,7 +102,7 @@ namespace Nuts
                     insert.ExecuteNonQuery();
                     disconnect();
                 }
-            } catch (Exception e) { inputCheck.msgBox(e.ToString(), "Database Error"); }
+            } catch (Exception e) { hj_tools.msgBox(e.ToString(), "Database Error", "ERROR", true); }
         }
     }
 }
