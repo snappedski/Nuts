@@ -39,7 +39,16 @@ namespace Nuts
 
         private void button1_Click(object sender, EventArgs e)
         {
+            /////////////////// Validation ///////////////////////////////
+            Boolean v = true;
+            if (in_user.Text == "") { v = inputCheck.noInfo(v, "Username"); }
+            if (in_pass.Text == "") { v = inputCheck.noInfo(v, "Password"); }
 
+            if (v == true)
+            { // Continue below if all valid //////////////
+                //CONNECT WITH ACCOUNT
+                //LOAD APPLICATION MAIN WINDOW
+            }
         }
 
         private void lbl_Pass_Click(object sender, EventArgs e)

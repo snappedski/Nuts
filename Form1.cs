@@ -49,6 +49,11 @@ namespace Nuts
                 string r = db_setup.db_initialize();
                 if (r == null) { inputCheck.msgBox(r, "Cannot Initialize");
                 } else { //db setup successful
+                    /////////////////////////////
+                    string[] columns = { }; //create column list in db class
+                    string[] values = { }; //create values list in db class
+                    /////////////////////////////
+                    db.db_insert("hj_users", columns, values);
                     frm_login form = new frm_login();
                     //form.Text = "test";
                     form.Show();
