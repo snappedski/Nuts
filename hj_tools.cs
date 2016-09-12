@@ -20,6 +20,12 @@ namespace Nuts
             return m;
         }
 
+        public static int stringToInt(string input){
+            int n = 9999999;
+            try { n = Int32.Parse(input); } catch (Exception) { /*Console.WriteLine("!!!!! - " + e);*/ }
+            return n;
+        }
+
         public static int randH(int max, int min){ // Controlled Random Integer
             Random rn = new Random();
             int n = max - min + 1;
@@ -54,12 +60,7 @@ namespace Nuts
             using (SHA1Managed sha1 = new SHA1Managed()){
                 var hash = sha1.ComputeHash(Encoding.UTF8.GetBytes(input));
                 var sb = new StringBuilder(hash.Length * 2);
-
-                foreach (byte b in hash){
-                    // can be "x2" if you want lowercase
-                    sb.Append(b.ToString("X2"));
-                }
-
+                foreach (byte b in hash){ sb.Append(b.ToString("X2")); }
                 return sb.ToString();
             }
         }
@@ -71,7 +72,7 @@ namespace Nuts
         public static void fileCreate(string dir, string name, string ext, string description){ //Create new file
             string path = dir + name + ext;
             if (!File.Exists(path)){ // Creates file if not present
-                string createText = "# " + name + "." + ext + Environment.NewLine + "# " + description + Environment.NewLine;
+                string createText = "# " + name + ext + Environment.NewLine + "# " + description + Environment.NewLine + "########################################################################" + Environment.NewLine;
                 File.WriteAllText(path, createText);
                 hj_tools.msgBox(name + " was successfully created.", "File Created!", "ASTERISK", true);
             } else {
@@ -89,9 +90,12 @@ namespace Nuts
         }
 
         public static string[] writeConfig(string[] settings, string[] values){ //formats settings and values for file writing
-            string[] lines = null;
+            string[] lines = settings;
             for (int i = 0; i < settings.Length; i++){
-                lines[i] = settings[i] + ": '" + values[i] + "'" + Environment.NewLine;
+                int n = hj_tools.stringToInt(values[i]);
+                if (n != 9999999){ lines[i] = settings[i] + ": " + values[i]; //integers
+                } else { lines[i] = settings[i] + ": '" + values[i] + "'"; //strings
+                }
             }
             return lines;
         }
@@ -102,10 +106,14 @@ namespace Nuts
                 string[] fileLines = System.IO.File.ReadAllLines(path);
                 for (int i = 0; i < fileLines.Length; i++){
                     if (fileLines[i].Contains(contains)){
-                        line = fileLines[i]; break;
+                        string[] lineB = fileLines[i].Split(' ');
+                        string value = lineB[1].Replace("'", string.Empty);
+                        line = value; break;
                     }
                 }
+            } else {hj_tools.msgBox("File Not Found! Contact your administrator.", "File Not Found!", "ERROR", false);
             }
+            if (hj_tools.compareStr(line, null)) { hj_tools.msgBox("The '" + contains + "' setting in your nuts.config file is missing or doesn't have a value!", "Missing Setting", "ERROR", true); }
             return line;
         }
 

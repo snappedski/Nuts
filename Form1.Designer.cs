@@ -67,6 +67,7 @@
             // 
             this.in_pass.Location = new System.Drawing.Point(79, 235);
             this.in_pass.Name = "in_pass";
+            this.in_pass.PasswordChar = '●';
             this.in_pass.Size = new System.Drawing.Size(159, 20);
             this.in_pass.TabIndex = 3;
             // 
@@ -125,9 +126,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(9, 125);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(217, 13);
+            this.label1.Size = new System.Drawing.Size(246, 13);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Please provide database credentials.";
+            this.label1.Text = "Please provide MySQL Server credentials.";
             this.label1.Click += new System.EventHandler(this.label1_Click_2);
             // 
             // pic_dbSetup
@@ -158,7 +159,7 @@
             this.Controls.Add(this.in_db);
             this.Controls.Add(this.in_host);
             this.Name = "frm_dbSetup";
-            this.Text = "Nuts Database Setup";
+            this.Text = "Nuts - Database Setup";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pic_dbSetup)).EndInit();
             this.ResumeLayout(false);

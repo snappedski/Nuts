@@ -50,6 +50,7 @@
             // 
             this.in_pass.Location = new System.Drawing.Point(200, 58);
             this.in_pass.Name = "in_pass";
+            this.in_pass.PasswordChar = '•';
             this.in_pass.Size = new System.Drawing.Size(100, 20);
             this.in_pass.TabIndex = 1;
             // 

@@ -8,3 +8,4 @@ X:\Documents\Visual Studio 2015\Projects\Nuts\Nuts\bin\Debug\Nuts.pdb
 X:\Documents\Visual Studio 2015\Projects\Nuts\Nuts\obj\Debug\Nuts.exe
 X:\Documents\Visual Studio 2015\Projects\Nuts\Nuts\obj\Debug\Nuts.pdb
 X:\Documents\Visual Studio 2015\Projects\Nuts\Nuts\obj\Debug\Nuts.frm_login.resources
+X:\Documents\Visual Studio 2015\Projects\Nuts\Nuts\bin\Debug\MySQLDriverCS.dll

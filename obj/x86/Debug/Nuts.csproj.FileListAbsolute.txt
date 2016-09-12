@@ -1,0 +1,11 @@
+X:\Documents\Visual Studio 2015\Projects\Nuts\Nuts\bin\x86\Debug\Nuts.exe.config
+X:\Documents\Visual Studio 2015\Projects\Nuts\Nuts\bin\x86\Debug\Nuts.exe
+X:\Documents\Visual Studio 2015\Projects\Nuts\Nuts\bin\x86\Debug\Nuts.pdb
+X:\Documents\Visual Studio 2015\Projects\Nuts\Nuts\bin\x86\Debug\MySQLDriverCS.dll
+X:\Documents\Visual Studio 2015\Projects\Nuts\Nuts\obj\x86\Debug\Nuts.frm_dbSetup.resources
+X:\Documents\Visual Studio 2015\Projects\Nuts\Nuts\obj\x86\Debug\Nuts.frm_login.resources
+X:\Documents\Visual Studio 2015\Projects\Nuts\Nuts\obj\x86\Debug\Nuts.Properties.Resources.resources
+X:\Documents\Visual Studio 2015\Projects\Nuts\Nuts\obj\x86\Debug\Nuts.csproj.GenerateResource.Cache
+X:\Documents\Visual Studio 2015\Projects\Nuts\Nuts\obj\x86\Debug\Nuts.exe
+X:\Documents\Visual Studio 2015\Projects\Nuts\Nuts\obj\x86\Debug\Nuts.pdb
+X:\Documents\Visual Studio 2015\Projects\Nuts\Nuts\obj\x86\Debug\Nuts.csprojResolveAssemblyReference.cache
